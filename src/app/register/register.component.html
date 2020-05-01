@@ -1,0 +1,117 @@
+<mat-card class="register-card"  > 
+    <mat-card-header>
+     <mat-card-title>
+         Register
+     </mat-card-title>
+   </mat-card-header>
+
+   <mat-card-content>
+    <form  class="full-width"  name="f">
+   <table  cellspaceing="0" class="full-width" [formGroup]="userForm"> 
+
+    <tr><td> 
+         <mat-form-field class="full-width">
+
+         
+        <input 
+         
+        name='fullname'
+        formControllName="fullname"
+        matInput  
+        
+        placeholder="Fullname"
+        
+        required
+       
+          />
+        
+         
+          
+
+       </mat-form-field>
+       <!-- 
+       <mat-error *ngIf="fullname.errors.required" hidden="true"> fullname est  vide </mat-error>
+      -->
+
+      </td>  </tr> 
+
+       <tr><td>  
+         <mat-form-field class="full-width">
+
+
+        <input type="email"
+         
+        name='email'
+        formControllName="email"
+        matInput  
+        placeholder="email"
+        required 
+         
+          />
+
+
+       </mat-form-field> 
+       <!-- 
+       <mat-error *ngIf="email.invalid" hidden> Email invalid </mat-error>
+      -->
+      </td> </tr> 
+
+
+       
+    <tr><td>  
+      <mat-form-field class="full-width"> 
+        <input 
+          type="password"
+         name='password'
+         formControllName="password"
+         matInput  
+         placeholder="password"
+         required  
+        
+           />
+    
+           
+
+        </mat-form-field>
+      </td> </tr>
+      <!-- 
+      <mat-error *ngIf="password.errors.required"> password est  vide </mat-error>
+    -->
+        <tr><td>
+            <mat-form-field class="full-width"> 
+          <input 
+            type="password"
+           name='repeatpassword'
+           formControllName="Repeat password"
+           required
+           matInput  
+           placeholder="Repeat password"
+            
+             />
+
+           
+          </mat-form-field> 
+          <!-- 
+          <mat-error *ngIf="repeatpassword.errors.required"> repeat password est  vide </mat-error>
+             -->
+          <mat-error *ngIf="repeatpassword.errors.passwordMatch">
+            Repeatpassword Should Match
+          </mat-error>
+
+        </td> </tr>
+
+
+
+   </table>
+   </form>
+   </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button  color="primary" 
+    (click)="register()"> Register</button>
+    
+   <span class="left-spacer">Already have an account <a [routerLink] ="['/login']">Login</a></span> 
+  </mat-card-actions>
+
+   </mat-card>
+   

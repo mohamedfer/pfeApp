@@ -1,0 +1,71 @@
+ 
+<mat-card class="login-card"> 
+    <mat-card-header>
+     <mat-card-title>
+         Login
+     </mat-card-title>
+   </mat-card-header>
+
+   <mat-card-content>
+    <form>
+   <table  cellspaceing="0"><tr><td>  <mat-form-field>
+
+
+    <input 
+     type="email"
+    name='email'
+    [(ngModel)]="email"
+    matInput  
+    placeholder="email"
+    required  
+      />
+      <div *ngIf="3>1">
+        Email is required.
+      </div>
+   </mat-form-field> </td> </tr>  
+
+
+
+
+
+
+    <tr><td>  <mat-form-field> 
+    <input 
+      type="password"
+     name='password'
+     [(ngModel)]="password"
+     matInput  
+     placeholder="password"
+     required  
+       />
+
+
+    </mat-form-field> </td> </tr> </table>
+    
+
+
+    
+</form>
+    </mat-card-content>
+
+    <!--
+<mat-cards-actions>  
+-->
+
+<button mat-raised-button  color="primary" (click)="login()" > Login</button>
+ 
+<span>
+If you don't have an account ?
+
+<a [routerLink]="['/register']" > register</a>
+here.
+</span>
+
+<!--
+</mat-cards-actions>
+-->
+
+     
+</mat-card>
+
+
